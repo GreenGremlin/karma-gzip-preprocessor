@@ -1,6 +1,8 @@
-# karma-gzip
+# karma-gzip [![NPM version](https://badge.fury.io/js/karma-gzip.svg)](http://badge.fury.io/js/karma-gzip)
 
-A Karma preprocessor and server handler for serving gzipped test assets. Particularly handy when working with large test bundles and remote browser-cloud services like Browserstack or Saucelabs.
+**A Karma preprocessor and server handler for serving gzipped test assets.**
+
+Particularly handy when working with large test bundles and remote browser-cloud services like Browserstack or Saucelabs.
 
 ### Installation
 
@@ -43,3 +45,7 @@ INFO [preprocessor.gzip]: compressed /MyProject/test/test_index.js [5MB -> 1MB]
 DEBUG [gzip-plugin]: serving (gzip): /MyProject/test/test_helper.js
 DEBUG [gzip-plugin]: serving (gzip): /MyProject/test/test_index.js
 ```
+
+### License
+
+MIT (http://www.opensource.org/licenses/mit-license.php)
