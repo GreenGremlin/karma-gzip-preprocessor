@@ -6,7 +6,9 @@ A Karma preprocessor and server handler for serving gzipped test assets. Particu
 
 The easiest way is to keep karma-coverage as a devDependency in your package.json.
 
-`npm install karma-gzip --save-dev`
+```
+npm install karma-gzip --save-dev
+```
 
 ### Configuration
 
