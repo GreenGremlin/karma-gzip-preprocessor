@@ -2,7 +2,7 @@ var zlib = require('zlib');
 var util = require('./util')
 
 // Proprocess files to provide a gzip compressed alternative version
-function Preprocesor(config, logger, helper) {
+function Preprocesor(gzippedFilePaths, config, logger, helper) {
   var log = logger.create('preprocessor.gzip');
 
   var transformPath = function(filepath) {
@@ -22,7 +22,9 @@ function Preprocesor(config, logger, helper) {
         return done(err);
       }
 
-      file.path = transformPath(file.originalPath);
+      gzippedFilePaths.push(file.path)
+      // file.path = transformPath(file.originalPath);
+
       log.debug('compressed ' + file.originalPath + ' [' + util.bytesToSize(originalSize) + ' -> ' + util.bytesToSize(gzippedContent.length) + ']');
       done(null, gzippedContent);
     });

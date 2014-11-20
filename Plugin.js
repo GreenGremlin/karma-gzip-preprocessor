@@ -1,29 +1,38 @@
 var path = require('path');
 
 var log = null;
-var compressedFiles = [];
-var servedFiles = [];
+var compressedFiles = Object.create(null);
 
-function Plugin(emitter, logger, customFileHandlers) {
+function Plugin(gzippedFiles, emitter, logger, customFileHandlers) {
   log = logger.create('gzip-plugin');
-
-  customFileHandlers.push({
-    urlRegex: /.*.gz(\?[a-z0-9]*)?$/,
-    handler: responseHandler
-  });
 
   emitter.on('file_list_modified', function(filesPromise) {
     filesPromise.then(function(files) {
-      files.included.forEach(function(file) {
-        if (path.extname(file.path) === '.gz') {
-          compressedFiles[path.basename(file.path)] = file;
-        } else {
-          servedFiles.push(file);
-        }
-      });
-      files.served = servedFiles;
+      updateFiles(files, gzippedFiles)
+      customFileHandlers.push(createGzipFileHandler(gzippedFiles));
     });
   });
+};
+
+function updateFiles(files, gzippedFiles) {
+  var webserverFiles = [];
+
+  files.included.forEach(function(file) {
+    if (gzippedFiles.indexOf(file.path) !== -1) {
+      compressedFiles[path.basename(file.path)] = file;
+    } else {
+      webserverFiles.push(file);
+    }
+  });
+
+  files.served = webserverFiles;
+};
+
+function createGzipFileHandler(gzippedFiles) {
+  return {
+    urlRegex: new RegExp(gzippedFiles.map(path.basename).join('|')),
+    handler: responseHandler
+  };
 };
 
 // Response handler for gzip encoded files
