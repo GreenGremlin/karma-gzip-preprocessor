@@ -12,7 +12,7 @@ npm install karma-gzip --save-dev
 
 ### Configuration
 
-```
+``` js
 // karma.conf.js
 module.exports = function(config) {
   config.set({
@@ -33,17 +33,13 @@ module.exports = function(config) {
 };
 ```
 
+You can tell that your assets are being gzipped when you see output something like the following:
 
 ``` shell
 $ karma start --log-level=debug
 
-...
-
-DEBUG [preprocessor.gzip]: compressed /MyProject/test/test_helper.js [2MB -> 437KB]
-DEBUG [preprocessor.gzip]: compressed /MyProject/test/test_index.js [5MB -> 1MB]
-
-...
-
+INFO [preprocessor.gzip]: compressed /MyProject/test/test_helper.js [2MB -> 437KB]
+INFO [preprocessor.gzip]: compressed /MyProject/test/test_index.js [5MB -> 1MB]
 DEBUG [gzip-plugin]: serving (gzip): /MyProject/test/test_helper.js
 DEBUG [gzip-plugin]: serving (gzip): /MyProject/test/test_index.js
 ```
