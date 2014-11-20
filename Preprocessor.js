@@ -23,9 +23,8 @@ function Preprocesor(gzippedFilePaths, config, logger, helper) {
       }
 
       gzippedFilePaths.push(file.path)
-      // file.path = transformPath(file.originalPath);
 
-      log.debug('compressed ' + file.originalPath + ' [' + util.bytesToSize(originalSize) + ' -> ' + util.bytesToSize(gzippedContent.length) + ']');
+      log.info('compressed ' + file.originalPath + ' [' + util.bytesToSize(originalSize) + ' -> ' + util.bytesToSize(gzippedContent.length) + ']');
       done(null, gzippedContent);
     });
   };

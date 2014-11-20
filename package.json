@@ -1,14 +1,21 @@
 {
   "name": "karma-gzip",
   "version": "1.0.0",
-  "description": "",
+  "description": "A gzip preprocessor for Karma",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "mime": "~1.2.11"
-  }
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Ferocia/karma-gzip.git"
+  },
+  "author": "Justin Morris <justin.morris@ferocia.com.au> (http://ferocia.com.au)",
+  "license": "MIT",
+  "keywords": [
+    "karma",
+    "gzip",
+    "preprocessor",
+    "karma-preprocessor"
+  ]
 }
