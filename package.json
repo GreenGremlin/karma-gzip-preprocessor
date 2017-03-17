@@ -1,6 +1,6 @@
 {
   "name": "karma-gzip",
-  "version": "1.0.1",
+  "version": "1.2.0",
   "description": "A gzip preprocessor for Karma",
   "main": "lib/index.js",
   "scripts": {
@@ -8,9 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:Ferocia/karma-gzip.git"
+    "url": "git@github.com:toptal/karma-gzip.git"
   },
-  "author": "Justin Morris <justin.morris@ferocia.com.au> (http://ferocia.com.au)",
+  "author": {
+    "name": "Justin Morris",
+    "email": "justin.morris@ferocia.com.au",
+    "url": "http://ferocia.com.au"
+  },
+  "contributors": [
+    {
+      "name": "Ilya Furman",
+      "email": "ilya.furman@toptal.com"
+    }
+  ],
   "license": "MIT",
   "keywords": [
     "karma",
