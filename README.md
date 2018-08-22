@@ -20,6 +20,7 @@ module.exports = function(config) {
   config.set({
     // We need to add some extra server middleware so that we can correctly
     // serve gzipped files
+    plugins: [ 'karma-gzip' ],
     frameworks: [ 'gzip' ],
     files: [
       'src/**/*.js',
@@ -27,7 +28,7 @@ module.exports = function(config) {
     ],
 
     preprocessors: {
-      // Only files marked for gzip preprocessing will be compressed.  
+      // Only files marked for gzip preprocessing will be compressed.
       'test/large_test_bundle.js': [ 'gzip' ],
       'test/test_helper.coffee': [ 'coffee', 'gzip' ]
     }
