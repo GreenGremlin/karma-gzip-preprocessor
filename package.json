@@ -1,6 +1,6 @@
 {
   "name": "karma-gzip",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "A gzip preprocessor for Karma",
   "main": "lib/index.js",
   "scripts": {
@@ -16,8 +16,8 @@
     "email": "jonathan@xgecko.com"
   },
   "contributors": [
-    "Ilya Furman <ilya.furman@toptal.com>",
-    "Jonathan Felchlin <jonathan@xgecko.com>"
+    "Jonathan Felchlin <jonathan@xgecko.com>",
+    "Ilya Furman <ilya.furman@toptal.com>"
   ],
   "license": "MIT",
   "keywords": [
