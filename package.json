@@ -4,7 +4,8 @@
   "description": "A gzip preprocessor for Karma",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -32,11 +33,20 @@
     "preprocessor",
     "karma-preprocessor"
   ],
+  "engines" : {
+    "node" : ">=4.8.7"
+  },
   "devDependencies": {
-    "grunt": "~0.4.1",
-    "grunt-auto-release": "~0.0.1",
-    "grunt-bump": "~0.0.7",
-    "grunt-contrib-jshint": "~0.6.0",
-    "grunt-npm": "~0.0.2"
+    "eslint": "^5.4.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-react": "^7.11.1",
+    "grunt": "~1.0.1",
+    "grunt-bump": "^0.8.0",
+    "grunt-conventional-changelog": "^6.1.0",
+    "grunt-eslint": "^19.0.0",
+    "grunt-npm": "0.0.2",
+    "load-grunt-tasks": "^3.2.0"
   }
 }
