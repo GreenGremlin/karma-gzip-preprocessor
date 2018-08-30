@@ -16,15 +16,8 @@
     "email": "jonathan@xgecko.com"
   },
   "contributors": [
-    {
-      "name": "Justin Morris",
-      "email": "justin.morris@ferocia.com.au",
-      "url": "http://ferocia.com.au"
-    },
-    {
-      "name": "Ilya Furman",
-      "email": "ilya.furman@toptal.com"
-    }
+    "Ilya Furman <ilya.furman@toptal.com>",
+    "Jonathan Felchlin <jonathan@xgecko.com>"
   ],
   "license": "MIT",
   "keywords": [
@@ -33,8 +26,8 @@
     "preprocessor",
     "karma-preprocessor"
   ],
-  "engines" : {
-    "node" : ">=4.8.7"
+  "engines": {
+    "node": ">=4.8.7"
   },
   "devDependencies": {
     "eslint": "^5.4.0",
