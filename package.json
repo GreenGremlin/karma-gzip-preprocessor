@@ -8,14 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:toptal/karma-gzip.git"
+    "url": "git@github.com:GreenGremlin/karma-gzip.git"
   },
   "author": {
-    "name": "Justin Morris",
-    "email": "justin.morris@ferocia.com.au",
-    "url": "http://ferocia.com.au"
+    "name": "Jonathan Felchlin",
+    "email": "jonathan@xgecko.com"
   },
   "contributors": [
+    {
+      "name": "Justin Morris",
+      "email": "justin.morris@ferocia.com.au",
+      "url": "http://ferocia.com.au"
+    },
     {
       "name": "Ilya Furman",
       "email": "ilya.furman@toptal.com"
