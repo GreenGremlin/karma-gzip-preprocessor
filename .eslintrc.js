@@ -20,6 +20,7 @@ module.exports = {
       'args': 'after-used',
       'ignoreRestSiblings': true,
     }],
+    'object-curly-spacing': [STYLE, 'never'],
     'padded-blocks': [STYLE, 'never'],
     'prefer-const': STYLE,
   }

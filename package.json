@@ -1,6 +1,6 @@
 {
-  "name": "karma-gzip",
-  "version": "2.0.1",
+  "name": "karma-gzip-preprocessor",
+  "version": "3.0.1",
   "description": "A gzip preprocessor for Karma",
   "main": "lib/index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:GreenGremlin/karma-gzip.git"
+    "url": "git@github.com:GreenGremlin/karma-gzip-preprocessor.git"
   },
   "author": {
     "name": "Jonathan Felchlin",
@@ -28,10 +28,9 @@
   ],
   "license": "MIT",
   "keywords": [
-    "karma",
-    "gzip",
-    "preprocessor",
-    "karma-preprocessor"
+    "karma-plugin",
+    "karma-preprocessor",
+    "gzip"
   ],
   "engines" : {
     "node" : ">=4.8.7"
@@ -41,12 +40,9 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "eslint-plugin-react": "^7.11.1",
-    "grunt": "~1.0.1",
-    "grunt-bump": "^0.8.0",
-    "grunt-conventional-changelog": "^6.1.0",
-    "grunt-eslint": "^19.0.0",
-    "grunt-npm": "0.0.2",
-    "load-grunt-tasks": "^3.2.0"
+    "eslint-plugin-react": "^7.11.1"
+  },
+  "peerDependencies": {
+    "karma": "^3.1.0"
   }
 }

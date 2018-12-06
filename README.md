@@ -1,50 +1,52 @@
-# karma-gzip [![NPM version](https://badge.fury.io/js/karma-gzip.svg)](http://badge.fury.io/js/karma-gzip)
+# karma-gzip-preprocessor [![NPM version](https://badge.fury.io/js/karma-gzip-preprocessor.svg)](http://badge.fury.io/js/karma-gzip-preprocessor)
 
-**A Karma preprocessor and server handler for serving gzipped test assets.**
+**A Karma preprocessor for compressing test assets.**
 
 Particularly handy when working with large test bundles and remote browser-cloud services like Browserstack or Saucelabs.
 
 ### Installation
 
-The easiest way is to keep karma-coverage as a devDependency in your package.json.
+```
+npm install karma-gzip-preprocessor --save-dev
+```
 
-```
-npm install karma-gzip --save-dev
-```
+### Requirements
+
+Since karma-gzip-preprocessor has a minimum requirement of karma v3.1.0.
+
+**For older versions of karma**, see the [README for karma-gzip v2](https://github.com/GreenGremlin/karma-gzip-preprocessor/tree/v2.0.1).
 
 ### Configuration
+
+To enable gzip compression, all you need to do is add `gzip` as a preprocessor in your karma config.
 
 ``` js
 // karma.conf.js
 module.exports = function(config) {
   config.set({
-    // We need to add some extra server middleware so that we can correctly
-    // serve gzipped files
-    plugins: [ 'karma-gzip' ],
-    frameworks: [ 'gzip' ],
     files: [
-      'src/**/*.js',
-      'test/**/*.js'
+      'src/**/*.test.js'
     ],
-
+    // The plugins config property is optional, but if it is included it must include 'karma-gzip-preprocessor'
+    plugins: [
+      'karma-gzip-preprocessor',
+    ],
     preprocessors: {
-      // Only files marked for gzip preprocessing will be compressed.
-      'test/large_test_bundle.js': [ 'gzip' ],
-      'test/test_helper.coffee': [ 'coffee', 'gzip' ]
-    }
+      'src/**/*.js': ['gzip'],
+      // The `gzip` preprocessor should always be the last preprocessor
+      '*.coffee': ['coffee', 'gzip'],
+    },
   });
 };
 ```
 
-You can tell that your assets are being gzipped when you see output something like the following:
+Verify your assets are gzipped when you see output simmilar to the following:
 
 ``` shell
-$ karma start --log-level=debug
+$ karma start
 
-INFO [preprocessor.gzip]: compressed /MyProject/test/test_helper.js [2MB -> 437KB]
-INFO [preprocessor.gzip]: compressed /MyProject/test/test_index.js [5MB -> 1MB]
-DEBUG [gzip-plugin]: serving (gzip): /MyProject/test/test_helper.js
-DEBUG [gzip-plugin]: serving (gzip): /MyProject/test/test_index.js
+INFO [preprocessor.gzip]: compressed /MyProject/src/polyfills.js [2MB -> 437KB]
+INFO [preprocessor.gzip]: compressed /MyProject/src/index.test.js [5MB -> 1MB]
 ```
 
 ### License
