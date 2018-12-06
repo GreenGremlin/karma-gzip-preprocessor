@@ -1,3 +1,5 @@
+**DEPRECATED** This package has been moved to [karma-gzip-preprocessor](https://github.com/GreenGremlin/karma-gzip-preprocessor)
+
 # karma-gzip [![NPM version](https://badge.fury.io/js/karma-gzip.svg)](http://badge.fury.io/js/karma-gzip)
 
 **A Karma preprocessor and server handler for serving gzipped test assets.**
